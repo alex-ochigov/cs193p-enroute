@@ -31,6 +31,15 @@ class FlightFetcher: ObservableObject // struct
 
     // MARK: - Private Implementation
     
+    // filters our results based on our flightSearch criteria
+    private func filter(_ results: Set<FAFlight>) -> [FAFlight] {
+        return results
+            .filter { flightSearch.airline == nil || $0.ident.hasPrefix(flightSearch.airline!) }
+            .filter { flightSearch.origin == nil || $0.origin == flightSearch.origin || $0.ident.hasPrefix("K"+flightSearch.origin!) }
+            .filter { !flightSearch.inTheAir || $0.departure != nil }
+            .sorted() // Flight implements Comparable (sorts by arrival time)
+    }
+    
     // fires off a EnrouteRequest to FlightAware
     // to get a list of flights heading toward our flightSearch.destination airport
     // it runs periodically and publishes any FAFlight objects it finds
@@ -48,7 +57,7 @@ class FlightFetcher: ObservableObject // struct
                 Airports.all.fetch($0.origin) // prefetch
                 Airlines.all.fetch($0.airlineCode) // prefetch
             }
-            self?.latest = results.sorted()
+            self?.latest = self?.filter(results) ?? []
         }
     }
 

@@ -23,6 +23,7 @@
 		DAB658C5246794A800A0F2BB /* FlightAware+Enroute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB658BF246794A800A0F2BB /* FlightAware+Enroute.swift */; };
 		DAB658C6246794A800A0F2BB /* FlightAwareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB658C0246794A800A0F2BB /* FlightAwareRequest.swift */; };
 		DAB658C7246794A800A0F2BB /* FlightSimulationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB658C1246794A800A0F2BB /* FlightSimulationData.swift */; };
+		FA0A7DFC24E2111600F1FB21 /* FilterFlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A7DFB24E2111600F1FB21 /* FilterFlights.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DAB658BF246794A800A0F2BB /* FlightAware+Enroute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlightAware+Enroute.swift"; sourceTree = "<group>"; };
 		DAB658C0246794A800A0F2BB /* FlightAwareRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightAwareRequest.swift; sourceTree = "<group>"; };
 		DAB658C1246794A800A0F2BB /* FlightSimulationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSimulationData.swift; sourceTree = "<group>"; };
+		FA0A7DFB24E2111600F1FB21 /* FilterFlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterFlights.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				DAB658AA2467944B00A0F2BB /* FlightsEnrouteView.swift */,
+				FA0A7DFB24E2111600F1FB21 /* FilterFlights.swift */,
 				DA47A9B52469D48900C8E13C /* FlightFetcher.swift */,
 				DA47A9B22469D48100C8E13C /* Airports.swift */,
 				DA47A9B12469D48100C8E13C /* Airlines.swift */,
@@ -197,6 +200,7 @@
 				DA47A9B32469D48100C8E13C /* Airlines.swift in Sources */,
 				DA47A9B42469D48100C8E13C /* Airports.swift in Sources */,
 				DAB658A62467944B00A0F2BB /* SceneDelegate.swift in Sources */,
+				FA0A7DFC24E2111600F1FB21 /* FilterFlights.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
