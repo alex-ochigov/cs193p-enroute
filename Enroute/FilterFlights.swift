@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct FilterFlights: View {
-    @ObservedObject var allAirports = Airports.all
-    @ObservedObject var allAirlines = Airlines.all
+    @FetchRequest(fetchRequest: Airport.fetchRequest(.all)) var airports: FetchedResults<Airport>
+    @FetchRequest(fetchRequest: Airline.fetchRequest(.all)) var airlines: FetchedResults<Airline>
     
     @State var draft: FlightSearch
     @Binding var flightSearch: FlightSearch
@@ -26,20 +26,20 @@ struct FilterFlights: View {
         NavigationView {
             Form {
                 Picker("Destination", selection: $draft.destination) {
-                    ForEach(allAirports.codes, id: \.self) { airport in
-                        Text("\(self.allAirports[airport]?.friendlyName ?? airport)").tag(airport)
+                    ForEach(airports.sorted(), id: \.self) { airport in
+                        Text(airport.friendlyName).tag(airport)
                     }
                 }
                 Picker("Origin", selection: $draft.origin) {
-                    Text("Any").tag(String?.none)
-                    ForEach(allAirports.codes, id: \.self) { (airport: String?) in
-                        Text("\(self.allAirports[airport]?.friendlyName ?? airport ?? "Any")").tag(airport)
+                    Text("Any").tag(Airport?.none)
+                    ForEach(airports.sorted(), id: \.self) { (airport: Airport?) in
+                        Text(airport?.friendlyName ?? "Any").tag(airport)
                     }
                 }
                 Picker("Airline", selection: $draft.airline) {
-                    Text("Any").tag(String?.none)
-                    ForEach(allAirlines.codes, id: \.self) { (airline: String?) in
-                        Text("\(self.allAirlines[airline]?.friendlyName ?? airline ?? "Any")").tag(airline)
+                    Text("Any").tag(Airline?.none)
+                    ForEach(airlines.sorted(), id: \.self) { (airline: Airline?) in
+                        Text(airline?.friendlyName ?? "Any").tag(airline)
                     }
                 }
                 Toggle(isOn: $draft.inTheAir) { Text("Enroute Only") }
@@ -58,6 +58,9 @@ struct FilterFlights: View {
     
     var doneButton: some View {
         Button("Done") {
+            if self.draft.destination != self.flightSearch.destination {
+                self.draft.destination.fetchIncomingFlights()
+            }
             self.flightSearch = self.draft
             self.isPresented = false
         }
