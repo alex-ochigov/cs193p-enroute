@@ -28,6 +28,7 @@
 		FAF1D96F24E2C31800D75E31 /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1D96E24E2C31800D75E31 /* Airport.swift */; };
 		FAF1D97124E2CCC600D75E31 /* Airline.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1D97024E2CCC600D75E31 /* Airline.swift */; };
 		FAF1D97324E2CD4600D75E31 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1D97224E2CD4600D75E31 /* Flight.swift */; };
+		FAF1D97524E2F28900D75E31 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1D97424E2F28900D75E31 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		FAF1D96E24E2C31800D75E31 /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
 		FAF1D97024E2CCC600D75E31 /* Airline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airline.swift; sourceTree = "<group>"; };
 		FAF1D97224E2CD4600D75E31 /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		FAF1D97424E2F28900D75E31 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				FAF1D96D24E2C2FB00D75E31 /* L12 */,
 				DAB658AA2467944B00A0F2BB /* FlightsEnrouteView.swift */,
 				FA0A7DFB24E2111600F1FB21 /* FilterFlights.swift */,
+				FAF1D97424E2F28900D75E31 /* MapView.swift */,
 				DA47A9B52469D48900C8E13C /* FlightFetcher.swift */,
 				DA47A9B22469D48100C8E13C /* Airports.swift */,
 				DA47A9B12469D48100C8E13C /* Airlines.swift */,
@@ -224,6 +227,7 @@
 				DA47A9B32469D48100C8E13C /* Airlines.swift in Sources */,
 				DA47A9B42469D48100C8E13C /* Airports.swift in Sources */,
 				DAB658A62467944B00A0F2BB /* SceneDelegate.swift in Sources */,
+				FAF1D97524E2F28900D75E31 /* MapView.swift in Sources */,
 				FA0A7DFC24E2111600F1FB21 /* FilterFlights.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
